@@ -1,8 +1,20 @@
 import { Tabs } from 'expo-router'
+import { TouchableOpacity } from 'react-native-web'
 
 export default () => {
 	return (
-		<Tabs initial='home' screenOptions={{ headerShown: false }}>
+		<Tabs
+			initial='home'
+			screenOptions={{
+				headerShown: false,
+				headerBackTitle: '',
+				headerLeft: () => (
+					<TouchableOpacity>
+						<Ionicons name='arrow-back' size={34} color='black' />
+					</TouchableOpacity>
+				),
+			}}
+		>
 			<Tabs.Screen
 				name='home'
 				options={{
